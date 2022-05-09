@@ -17,6 +17,15 @@ soong_config_module_type {
     properties: ["cflags", "include_dirs", "static_libs", "whole_static_libs", "srcs"],
 }
 
+soong_config_module_type {
+    name: "aosp_vs_qva_cc_defaults",
+    module_type: "cc_defaults",
+    config_namespace: "aosp_vs_qva",
+    variables: ["aosp_or_qva"],
+    // Properties can be extended to other properties as well
+    properties: ["libs", "static_libs", "shared_libs", "whole_static_libs"],
+}
+
 soong_config_string_variable {
     name: "bredr_or_btadva",
     values: ["bredr", "btadva"],
